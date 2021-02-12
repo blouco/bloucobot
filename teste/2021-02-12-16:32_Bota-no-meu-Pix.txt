@@ -1,0 +1,37 @@
+[16:32:22] Meeting started by volooptaz
+[16:32:29] Current missao: Consagração de Puxadoras (set by volooptaz)
+[16:32:40] Meeting puxam are: puxadora1,, puxadora2,, puxadora3
+[16:33:06] blz: <Puxadora1> 
+[16:33:09] blz: <Puxadora2> 
+[16:33:11] blz: <Puxadora3> 
+[16:34:08] LINK: https://hash.bloucos.art/puxadoras/?bonde=EscassezHinoClipe&estandarte=EnamoresLegistaDesfalque&papo=EncanadaMereciaHardware [None]
+[16:34:43] seliga: Aparentemente os links não estão registrando ? "SopelBlouco there is no active meeting"
+[16:34:59] <volooptaz> .missão Criação do Bonde
+[16:35:07] Current missao: Criação do Bonde (set by volooptaz)
+[16:35:18] vrau: <Puxadora1> vai criar Bonde
+[16:35:20] blz: <Puxadora1>
+[16:35:41] Current missao: Criação do Trio (set by volooptaz)
+[16:36:14] vrau: Mixers: Mixer1, Mixer2
+[16:36:44] LINK: https://hash.bloucos.art/mixers/?bonde=EscassezHinoClipe&estandarte=EnamoresLegistaDesfalque&papo=EncanadaMereciaHardware&trio=CadeiaMucamboEmpossado [None]
+[16:37:08] seliga: entendi, é porque o Meetbot original está rodando também e o ".link" é o 'unico termo compartilhado entre eles
+[16:37:50] vrau: Mixer1 vai configurar acesso ao Camarim
+[16:38:23] seliga: <Mixer2> Transmissão aberta: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[16:38:56] vrau: <Mixer3> indo replicar transmissão no bonde
+[16:39:04] <volooptaz> .info <Mixer3> transmissão replicada no bonde!
+[16:39:09] seliga: <Mixer3> transmissão replicada no bonde!
+[16:39:25] Current missao: Ativação do Trio (set by volooptaz)
+[16:39:59] vrau: Artista entrando: Artista1
+[16:40:00] vrau: Artista entrando: Artista2
+[16:40:01] vrau: Artista entrando: Artista3
+[16:40:16] LINK: https://hash.bloucos.art/artistas/?bonde=EscassezHinoClipe&estandarte=EnamoresLegistaDesfalque&trio=CadeiaMucamboEmpossado [None]
+[16:40:44] LINK: https://hash.bloucos.art/artistas/?bonde=EscassezHinoClipe&estandarte=EnamoresLegistaDesfalque&trio=CadeiaMucamboEmpossado [None]
+[16:41:00] seliga: Artista1 tocando agora!! uhul
+[16:41:35] LINK: https://hash.bloucos.art/passistas/?estandarte=EnamoresLegistaDesfalque&bonde=EscassezHinoClipe [None]
+[16:41:55] Current missao: Ativação dos Bondes (set by volooptaz)
+[16:42:04] Current missao: Blouco na Rua (set by volooptaz)
+[16:42:30] LINK: https://hash.bloucos.art/incautas/?papo=EncanadaMereciaHardware&transmissao=dQw4w9WgXcQ [None]
+[16:42:42] vrau: publique-se!!! vem pro blouco
+[16:42:58] seliga: Artista2 tocando
+[16:43:01] seliga: Artista3 tocando
+[16:43:18] seliga: ta começando a ficar caótico demais isso, vamo andar
+[16:43:23] Meeting ended by volooptaz. Total meeting length: 11 minutes

@@ -9,6 +9,8 @@ https://github.com/sopel-irc/sopel/blob/master/sopel/modules/meetbot.py
 
 Atual tabela de tradução:
 
+| Meetbot | Bloucobot |
+| ------- | --------- |
 | .startmeeting | .vemblouco |
 | .chairs | .puxam |
 | .info | .seliga |

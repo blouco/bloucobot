@@ -14,6 +14,7 @@ import collections
 import os
 import re
 import time
+import hashlib
 from string import punctuation, whitespace
 
 from sopel import formatting, module, tools
@@ -21,6 +22,7 @@ from sopel.config.types import (FilenameAttribute, StaticSection,
                                 ValidatedAttribute)
 from sopel.modules.url import find_title
 
+import requests
 
 
 UNTITLED_MEETING = "Anônimo"
@@ -149,7 +151,7 @@ def log_html_end(channel):
     current_time = time.strftime("%H:%M:%S", time.gmtime())
     logfile.write("</ul>\n<h4>Meeting ended at %s UTC</h4>\n" % current_time)
     plainlog_url = meeting_log_baseurl + tools.web.quote(
-        channel + "/" + figure_logfile_name(channel) + ".log"
+        channel + "/" + figure_logfile_name(channel) + ".txt"
     )
     logfile.write('<a href="%s">Full log</a>' % plainlog_url)
     logfile.write("\n</body>\n</html>\n")
@@ -159,7 +161,7 @@ def log_html_end(channel):
 # Write a string to the plain text log
 def log_plain(item, channel):
     logfile_filename = os.path.join(
-        meeting_log_path + channel, figure_logfile_name(channel) + ".log"
+        meeting_log_path + channel, figure_logfile_name(channel) + ".txt"
     )
     logfile = codecs.open(logfile_filename, "a", encoding="utf-8")
     current_time = time.strftime("%H:%M:%S", time.gmtime())
@@ -302,13 +304,25 @@ def vaiblouco(bot, trigger):
     htmllog_url = meeting_log_baseurl + tools.web.quote(
         trigger.sender + "/" + figure_logfile_name(trigger.sender) + ".html"
     )
+    fulllog_url = meeting_log_baseurl + tools.web.quote(
+        trigger.sender + "/" + figure_logfile_name(trigger.sender) + ".txt"
+    )
     log_plain(
         "O Blouco saiu às %s. Tempo aqui: %d minutos"
         % (trigger.nick, meeting_length // 60),
         trigger.sender,
     )
-    bot.say("Atividade: " + htmllog_url)
+    bot.say("Registro principal: " + htmllog_url)
+    bot.say("Registro completo: " + fulllog_url)
     meetings_dict[trigger.sender] = collections.defaultdict(dict)
+
+
+    r = requests.get(fulllog_url)
+    page_source = r.text
+    md5 = hashlib.md5(page_source.encode('utf-8')).hexdigest()
+
+    bot.say("Segue o Blouco! " + md5)
+
     del meeting_vraus[trigger.sender]
 
 

@@ -22,7 +22,8 @@ from sopel.config.types import (FilenameAttribute, StaticSection,
 from sopel.modules.url import find_title
 
 
-UNTITLED_MEETING = "Blouco Anônimo"
+
+UNTITLED_MEETING = "Anônimo"
 
 
 class BloucobotSection(StaticSection):

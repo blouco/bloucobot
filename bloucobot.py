@@ -478,44 +478,8 @@ def meetingseliga(bot, trigger):
     bot.say(formatting.bold("seliga:") + " " + trigger.group(2))
 
 
-# called for every single message
-# Will log to plain text only
-@module.rule("(.*)")
-@module.priority("low")
-def log_meeting(bot, trigger):
-    if not is_meeting_running(trigger.sender):
-        return
-
-    # Handle live prefix changes with cached regex
-    if (
-        "bloucobot_prefix" not in bot.memory or
-        bot.memory["bloucobot_prefix"] != bot.config.core.prefix
-    ):
-        commands = [
-            "vemblouco",
-            "missão",
-            "vaiblouco",
-            "puxam",
-            "vrau",
-            "listvraus",
-            "blz",
-            "link",
-            "seliga",
-            "ows",
-        ]
-
-        bot.memory["bloucobot_command_regex"] = re.compile(
-            "{}({})( |$)".format(bot.config.core.prefix, "|".join(commands))
-        )
-        bot.memory["bloucobot_prefix"] = bot.config.core.prefix
-
-    if bot.memory["bloucobot_command_regex"].match(trigger):
-        return
-    log_plain("<" + trigger.nick + "> " + trigger, trigger.sender)
-
 
 @module.commands("ow")
-@module.require_privmsg()
 def take_ow(bot, trigger):
     """
     Log a ow, to be shown with other ows when a chair uses .ows.
@@ -526,25 +490,24 @@ def take_ow(bot, trigger):
 
     See [bloucobot module usage]({% link _usage/bloucobot-module.md %})
     """
-    if not trigger.group(4):  # <2 arguments were given
+    if not trigger.group(3):  # <2 arguments were given
         bot.say(
-            "Uso: {}ow <#canal> <comentário>".format(
+            "Uso: {}ow <comentário>".format(
                 bot.config.core.help_prefix
             )
         )
         return
 
-    target, message = trigger.group(2).split(None, 1)
-    target = tools.Identifier(target)
-    if not is_meeting_running(target):
-        bot.say("Não tem Blouco naquele canal.")
+    message = trigger.group(2)
+    if not is_meeting_running(trigger.sender):
+        bot.say("Não tem Blouco aqui.")
     else:
-        meetings_dict[trigger.group(3)]["ows"].append((trigger.nick, message))
+        meetings_dict[trigger.sender]["ows"].append((trigger.nick, message))
         bot.say(
             "Seu Ow foi gravado. Vai aparecer quando as Puxadoras me pedirem para mostrar os Ows."
         )
         bot.say(
-            "Ow gravado", meetings_dict[trigger.group(3)]["head"]
+            "Ow gravado", meetings_dict[trigger.sender]["head"]
         )
 
 
